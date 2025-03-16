@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Federal Bureau of Investigations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 1.6;
+            align-items: start;
+            background-color: #113a69;
+            color: #000000;
+        }
+
+        header {
+                background: url('https://images7.alphacoders.com/781/781278.jpg') no-repeat center center/cover;
+                color: white;
+                padding: 20px 50px; 
+                display: flex;
+                justify-content: space-between; 
+                align-items: center; 
+                transition: background-color 0.3s ease;
+                height: 100px; 
+                position: relative;
+            }
+
+        header::after { 
+                 content: "";
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 width: 100%;
+                 height: 100%;
+                 background: rgba(0, 0, 0, 0.5); 
+                 z-index: 1;
+            }
+
+        header > * {
+                  position: relative;
+                 z-index: 2;
+            }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px; 
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #e2b318;
+        }
+
+        .hero {
+         background: url('file:///C:/Users/Rekmar/Downloads/image.jpeg') center center/cover no-repeat;
+         color: white;
+         padding: 120px 50px;
+         font-size: 2rem;
+         text-align: left;
+         background-attachment: fixed;
+         background-size: cover;
+         background-position: center;
+        }
+
+
+        .hero h2 {
+            font-size: 3rem;
+        }
+
+        .hero .btn {
+            background-color: #e4c30b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #ca9c06;
+        }
+
+        section {
+            padding: 50px 20px;
+        }   
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .about {
+            background-color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .about .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .about-image img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+
+        .services {
+            background-color: white;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: rgb(255, 255, 255);
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .blog {
+            background: url('https://res.cloudinary.com/highereducation/images/f_auto,q_auto/v1664378057/CriminalJusticeDegreeSchools.com/GettyImages-1184836915_301535ef3/GettyImages-1184836915_301535ef3.jpg') center center/cover no-repeat;
+            color:  #ca9c06;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 50px 20px;
+            margin-bottom: 50px;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog h2 {
+            text-align: center;
+            color:white;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .blog-posts {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .blog-post {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            background-color: rgb(255, 255, 255);
+            color: rgb(43, 76, 146);
+            padding: 50px 20px;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form button {
+            background-color: #e4c30b;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ca9c06;
+        }
+
+        footer {
+            margin-top: 50px;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<header>
+    <div style="display: flex; align-items: center;">
+        <a href="https://www.fbi.gov/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/New_seal_of_the_Federal_Bureau_of_Investigation.svg/800px-New_seal_of_the_Federal_Bureau_of_Investigation.svg.png" 
+                 alt="FBI Logo" 
+                 style="height: 50px; width: auto; margin-right: 15px;">
+        </a>
+        <h1>F.B.I <span style="font-size: 1.5rem; margin-left: 5px; color: #ffcc00;">
+            Federal Bureau of Investigation
+        </span></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Misson and Priorities</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h2>We protect the American people and uphold the U.S. Constitution.</h2>
+            <p>
+                You can report suspicious activities and crime by contacting us 24/7 at 
+                <a href="https://fbi.gov" target="_blank" style="color: #e6b20b; font-weight: bold; text-decoration: underline;">
+                    fbi.gov
+                </a>.
+            </p>
+            <a href="#services" class="btn">Explore</a>
+        </div>
+    </section>
+    
+
+    
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About FBI</h2>
+                    <p>Our priority is to help protect you, your children, your communities, and your businesses from the most dangerous threats facing our nation—from international and domestic terrorists to spies on U.S. soil, from cyber villains to corrupt government officials, from mobsters to violent street gangs, from child predators to serial killers. Along the way, we help defend and uphold our nation's economy, physical and electronic infrastructure, and democracy. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Mission and Priorities</h2>
+            <div class="card-container">
+                <div class="service-card">
+                    <h3>History</h3>
+                    <p>The Federal Bureau of Investigation (FBI) was established in 1908 as the Bureau of Investigation (BOI) under the U.S. Department of Justice. It was created by Attorney General Charles Bonaparte during President Theodore Roosevelt’s administration to handle federal crimes.
+
+                        In 1935, it was renamed the FBI under Director J. Edgar Hoover, who expanded its role in national security, counterintelligence, and crime fighting. Under Hoover, the FBI fought organized crime, communist espionage, and civil rights violations, but also faced criticism for overreach.
+                        
+                        During the Cold War, the FBI focused on Soviet spies and domestic surveillance. After the 9/11 attacks in 2001, it shifted its priority to counterterrorism. Today, the FBI handles cybercrime, public corruption, white-collar crime, and terrorism threats while balancing civil liberties and security concerns.</p>
+                </div>
+                <div class="service-card">
+                    <h3>How does the FBI work a case?</h3>
+                    <p>The FBI investigates crimes using a structured process that includes intelligence gathering, forensic analysis, and legal procedures. Here's a brief summary of how they operate:
+
+                        Case Initiation – The FBI opens investigations based on credible leads, reports from law enforcement, or national security concerns.
+                        Evidence Collection – Agents gather physical, digital, and testimonial evidence through surveillance, interviews, informants, and forensic analysis.
+                        Undercover & Special Tactics – The FBI may use undercover agents, wiretaps, and cyber tools to track criminal activities.
+                        Forensic & Lab Analysis – The FBI’s labs analyze DNA, fingerprints, digital data, and other materials to connect suspects to crimes.
+                        Arrests & Prosecution – Once enough evidence is gathered, the FBI works with federal prosecutors to make arrests and take cases to court.
+                        Collaboration – The FBI cooperates with local police, intelligence agencies, and international partners to solve cases and prevent crimes.
+                        Their investigations cover terrorism, cybercrime, organized crime, public corruption, and more.</p>
+                </div>
+                <div class="service-card">
+                    <h3>How We Investigate</h3>
+                    <p>The FBI investigates a wide range of crimes and threats to national security, including:
+
+                        Terrorism – Preventing domestic and international terrorist attacks.
+                        Cybercrime – Investigating hacking, ransomware, and online fraud.
+                        Counterintelligence – Detecting and stopping foreign espionage.
+                        Organized Crime – Targeting drug cartels, human trafficking, and the mafia.
+                        Public Corruption – Investigating bribery, election fraud, and misconduct by officials.
+                        Violent Crime – Addressing serial killings, kidnappings, and major violent offenses.
+                        White-Collar Crime – Investigating fraud, embezzlement, and insider trading.
+                        Civil Rights Violations – Handling hate crimes, police misconduct, and voter suppression.
+                        The FBI works with local, state, and international agencies to enforce federal laws and protect U.S. security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Latest FBI Blog Posts </h2>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <h3>FBI Law Enforcement Bulletin</h3>
+                    <p>Published monthly since 1932, this bulletin features articles on law enforcement technology, issues such as crime mapping and use of force, recent criminal justice research, and ViCAP alerts on wanted suspects and key cases...</p>
+                    <a href="https://www.fbi.gov/feeds/news-blog">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <h3>New FBI Director Takes Oath of Office</h3>
+                    <p>On February 21, Kash Patel was sworn in as the ninth Director of the FBI in a ceremony in Washington, D.C. Attorney General Pamela Bondi administered the oath of office...</p>
+                    <a href="https://www.fbi.gov/news/stories/new-fbi-director-takes-oath-of-office">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <h3>75th Anniversary of the Ten Most Wanted Fugitives List</h3>
+                    <p>For 75 years, the Ten Most Wanted Fugitives list has helped the FBI track and capture some of the most elusive and dangerous criminals in history. The list serves as a testament to the Bureau's commitment to bringing criminals, especially the most violent and dangerous offenders, to justice...</p>
+                    <a href="https://www.fbi.gov/news/stories/75th-anniversary-of-the-ten-most-wanted-fugitives-list">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="contact number" name="contact number" id="contact number" placeholder="Contact Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+ 
+    <footer>
+        <p>&copy; 2025 Federal Bureau of Investigations. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
